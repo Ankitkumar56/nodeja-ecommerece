@@ -1,0 +1,15 @@
+.imgFilter{
+    filter: brightness(1.20);
+}
+
+
+  
+  
+
+  #logo {
+    
+    float: left;
+    height: 30px;
+    width: auto; /* correct proportions to specified height */
+   
+  }

@@ -1,0 +1,56 @@
+<header>
+    <nav class="navbar fixed-top navbar-dark navbar-expand-md bg-success text-white">
+    <a class="text-white navbar-brand" href="/">
+         <i></i><img id="logo" src="img/logo1.jpg">
+    </a>
+    <button class ="navbar-toggler" type="button" data-toggler="collapse" 
+    data-target="#navbarCollapse" aria-controls=" navbarCollapse" aria-expanded="false"
+    aria-label="Toggle navigation" >
+         <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+         <ul class="navbar-nav mr-auto menu">
+             <li class="nav-item active">
+                 <a href="/" class="btn btn-primary btn-lg"class="nav-link">HOME</a>
+             </li>
+         </ul>
+        <form class="form-inline mt-2 mt-md-0">
+             <a href="/cart" class="text-white nav-link">
+                 <i class="fa fa-shopping-cart" style="font-size:26px;color:#fd7e14">
+                 </i>my Cart  <i  id ="cart_n"></i>
+             </a>
+             <a href="/admin" class="nav-link text-white">
+               <i class="fa fa-user" style="font-size:26px;color:#fd7e14"></i>my order
+             </a>
+         </form>
+    </div> 
+</nav>
+</header>
+<div class="container  mat-4">
+    <main role="main">
+        <div class="row">
+            <div class="col">
+                <h1>my cart</h1>
+                <div class="table-responsive-sm">
+                <table class="table table striped">
+                    <thread>
+                        <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Product</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table">
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+        <hr class="featurette-divider">
+    </main>
+</div>
+<p> <a href="/afterlogin">----go back</a></p>
+<script src="/js/cart.js"></script>    

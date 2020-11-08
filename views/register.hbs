@@ -1,0 +1,76 @@
+<header>
+    <nav class="navbar fixed-top navbar-dark navbar-expand-md bg-success text-white">
+    <a class="text-white navbar-brand" href="/">
+         <i></i><img id="logo" src="img/logo1.jpg">
+    </a>
+    <button class ="navbar-toggler" type="button" data-toggler="collapse" 
+    data-target="#navbarCollapse" aria-controls=" navbarCollapse" aria-expanded="false"
+    aria-label="Toggle navigation" >
+         <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto menu">
+             <li class="nav-item active">
+                 <a href="/" class="btn btn-primary btn-lg"class="nav-link">Home</a>
+             </li>
+ </ul>
+        
+    </div> 
+</nav>
+</header>
+
+<form style=" margin-left: 30% ; margin-right: 30%; margin-top: 10%">
+    <div class="form-group">
+    <label for="exampleInputEmail1">User Name</label>
+    <input type="text" class="form-control" name="username" id="username" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your data with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" name="password" id="password">
+  </div>
+  <div class="form-group">
+    <label for="conPassword1">confirm Password</label>
+    <input type="password" class="form-control" name="conpassword" id="conpassword">
+  </div>
+ <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">are you human?</label>
+  </div>
+   <input type="button" value="Register" id="submit" onclick="validate()"/>
+   <p> <a href="/login">go back</a></p>
+</form>
+
+<script>
+var attempt = 50; 
+function validate(){
+var username = document.getElementById("username").value;
+var password = document.getElementById("password").value;
+var conpassword = document.getElementById("conpassword").value;
+if ( username == "kazi" && password == "kazi@123" && conpassword == "kazi@123"){
+alert ("register successfully");
+window.location = "/login"; 
+return false;
+}
+else if ( username == "mausam" && password == "mausam@123" && conpassword == "mausam@123"){
+alert ("register successfully");
+window.location = "/login"; 
+return false;
+}
+else if ( username == "admin" && password == "admin@123" && conpassword == "admin@123"){
+alert ("register successfully");
+window.location = "/login"; 
+return false;
+}
+else{
+attempt --;
+alert("INVALID INPUT");
+if( attempt == 0){
+document.getElementById("username").disabled = true;
+document.getElementById("password").disabled = true;
+document.getElementById("submit").disabled = true;
+return false;
+}
+}
+}
+</script>

@@ -1,0 +1,71 @@
+<header>
+    <nav class="navbar fixed-top navbar-dark navbar-expand-md bg-success text-white">
+    <a class="text-white navbar-brand" href="/">
+         <i></i><img id="logo" src="img/logo1.jpg">
+    </a>
+    <button class ="navbar-toggler" type="button" data-toggler="collapse" 
+    data-target="#navbarCollapse" aria-controls=" navbarCollapse" aria-expanded="false"
+    aria-label="Toggle navigation" >
+         <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto menu">
+             <li class="nav-item active">
+                 <a href="/" class="btn btn-primary btn-lg"class="nav-link">Home</a>
+             </li>
+ </ul>
+        
+    </div> 
+</nav>
+</header>
+
+<form style=" margin-left: 30% ; margin-right: 30%; margin-top: 10%">
+    <div class="form-group">
+    <label for="exampleInputEmail1">User Name</label>
+    <input type="text" class="form-control" name="username" id="username" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your data with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" name="password" id="password">
+  </div>
+ <div class="form-group form-check">
+    <input type="checkbox" onclick="myFunction()">Show Password
+  </div>
+   <input type="button" value="Login" id="submit" onclick="validate()"/>
+  <p>not yet <a href="/register">Register?</a></p>
+  <p>forget <a href="/forget">Password?</a></p>
+</form>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+
+var attempt = 3; 
+function validate(){
+var username = document.getElementById("username").value;
+var password = document.getElementById("password").value;
+if ( username == "kazi" && password == "kazi@123"){
+alert ("Login successfully");
+window.location = "/afterlogin"; 
+return false;
+}
+else{
+attempt --;
+alert("You have left "+attempt+" attempt. PLEASE INPUT VALID USER NAME AND PASSWORD;");
+if( attempt == 0){
+document.getElementById("username").disabled = true;
+document.getElementById("password").disabled = true;
+document.getElementById("submit").disabled = true;
+return false;
+}
+}
+}
+</script>
